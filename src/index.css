@@ -9,8 +9,11 @@
   padding: 0;
   border-style: none;
   box-sizing: border-box;
+
 }
 body {
  background-color: #E5E5E5;
-  font-family:"iranyekan"
+  font-family:"iranyekan";
+  height: 100%;
+width: 100%;
 }

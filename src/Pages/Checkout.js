@@ -11,8 +11,8 @@ const Checkout = () => {
     ? cart.reduce((acc, curr) => acc + curr.quantity * curr.price, 0)
     : 0
   return (
-    <main className="flex justify-center container mx-auto mt-6 mb-20 gap-6">
-      <section className="flex flex-col ring-1 ring-gray-300 rounded-md  w-8/12">
+    <main className="flex flex-col md:flex-row justify-center  container mx-auto mt-6 mb-20 gap-6">
+      <section className="flex flex-col ring-1 ring-gray-300 rounded-md w-full  md:w-8/12">
         <div className="flex  items-center justify-center container mx-auto p-4">
           <h1 className="font-bold text-2xl text-slate-700 ">صورتحساب</h1>
         </div>
@@ -64,7 +64,7 @@ const Checkout = () => {
             )}
       </section>
 
-      <section className="flex flex-col gap-y-4 ring-1 ring-gray-300 rounded-md p-4 w-4/12 h-56">
+      <section className="flex flex-col gap-y-4 ring-1 ring-gray-300 rounded-md p-4 w-full  md:w-4/12 h-56">
         <div className="flex justify-between items-center  w-full">
           <p>قیمت کالاها</p>
           <p>{originalPrice} تومان</p>

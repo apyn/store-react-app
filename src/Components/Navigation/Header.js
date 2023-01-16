@@ -8,30 +8,32 @@ import {
 import { useCart } from '../../Providers/CartProviders'
 import { useAuth } from '../../Providers/AuthProviders'
 import { useState } from 'react'
+import Switcher from '../../Hooks/Switcher'
 
 const Header = () => {
   const { cart } = useCart()
   const Auth = useAuth()
   return (
-    <nav className="hidden md:flex justify-between shadow-lg shadow-gray-200 sticky top-0 rounded-b-md container mx-auto px-4 bg-slate-50">
+    <nav className="hidden md:flex justify-between shadow-lg shadow-gray-200 dark:shadow-gray-700 sticky top-0 rounded-b-md container mx-auto px-4 bg-slate-50 dark:bg-slate-700 dark:text-white">
       <ul className="flex items-center gap-2 ">
-        <li className="px-4 py-3 text-violet-700 font-bold text-sm cursor-pointer rounded-md hover:text-violet-700 ">
+        <li className="px-4 py-3 dark:text-white text-violet-700 font-bold text-sm cursor-pointer rounded-md hover:text-violet-700 ">
           <NavLink to="/" className="">
             <HiCamera className="w-8 h-8" />
+           
           </NavLink>
         </li>
-        <li className="px-4 py-3 text-slate-800 font-bold text-sm cursor-pointer rounded-md hover:text-violet-700 ">
+        <li className="px-4 py-3 text-slate-800 dark:text-slate-200 font-bold text-sm cursor-pointer rounded-md dark:hover:text-violet-400 hover:text-violet-700 ">
           <NavLink to="/" className="">
             خانه
           </NavLink>
         </li>
-        <li className="px-4 py-3 text-slate-800 font-bold text-sm cursor-pointer rounded-md hover:text-violet-700 ">
+        <li className="px-4 py-3 text-slate-800 dark:text-slate-200 font-bold text-sm cursor-pointer rounded-md hover:text-violet-700 ">
           <NavLink  to="/" className="">
             محصولات{' '}
           </NavLink>
          
         </li>
-        <li className="px-4 py-3 text-slate-800 font-bold text-sm cursor-pointer rounded-md hover:text-violet-700 ">
+        <li className="px-4 py-3 text-slate-800 dark:text-slate-200 font-bold text-sm cursor-pointer rounded-md hover:text-violet-700 ">
           <NavLink to="/" className="">
             بلاگ
           </NavLink>{' '}
@@ -42,11 +44,14 @@ const Header = () => {
           <HiSearch className=" -left-5 -top-2  absolute" />
         </span>
         <input
-          className="placeholder-slate-400 placehoder-sm outline-none text-sm bg-violet-100 px-6 py-2 text-slate-800 rounded-md w-full"
+          className="placeholder-slate-400 placehoder-sm outline-none text-sm bg-violet-100 px-6 py-2 text-slate-800 dark:text-slate-300 rounded-md w-full"
           placeholder=" جستوجوی نام برند ، محصلول ..."
         />
       </div>
       <ul className="flex items-center justify-center">
+        <li className=" px-4 py-3 cursor-pointer rounded-md">
+        <Switcher className="w-4 h-4"/>
+        </li>
         <li className="px-4 py-3 text-violet-700 font-bold text-sm cursor-pointer rounded-md hover:bg-gray-100  hover:text-violet-700 ">
           <NavLink to="/cart" className="relative">
             <HiOutlineShoppingCart className="h-5 w-5 " />

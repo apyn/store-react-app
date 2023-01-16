@@ -18,7 +18,7 @@ const route=[
     {path:"/login" , element:<LoginPage/>},
     {path:"/signup" , element:<SignupPage/>},
     {path:"/profile" ,element:<Profile/>},
-    {path:"/singleproduct" , element:<SingleProduct/>}
+    {path:"/singleproduct/:_id" , element:<SingleProduct/>}
 ]
 
 export default route

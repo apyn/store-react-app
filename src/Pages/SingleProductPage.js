@@ -11,8 +11,37 @@ import {
 } from 'react-icons/hi'
 import { FaTruck, FaDigitalOcean } from 'react-icons/fa'
 
-import { Link } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
+import { useEffect, useState } from 'react'
+import axios from 'axios'
+import { useCartActions } from '../Providers/CartProviders'
+import { toast } from 'react-hot-toast'
 const SingleProduct = () => {
+  const [product,setProduct]=useState([])
+  const dispatch= useCartActions()
+
+  const {_id} = useParams()
+  const navi=useNavigate()
+const addHandler=(product)=>{
+dispatch({type:"ADD_TO_CART",payload:product})
+navi("/cart")
+    toast.success(`${product.name} به سبد خرید اضافه شد`)
+  }
+  useEffect(()=>{
+
+    const getProduct = async () => {
+      try {
+        const { data } = await axios.get(`http://localhost:5000/api/product/${_id}`)
+        console.log(data.description[0].support)
+      setProduct(data)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+    getProduct()
+},[])
+
   return (
     <section className=" container mx-auto mt-4  ">
       <section className=" container mx-auto mt-4  ">
@@ -20,7 +49,7 @@ const SingleProduct = () => {
           <div className="bg-stone-50 shadow-md rounded w-7 h-7 flex items-center justify-center">
             <HiChevronLeft className="w-6 h-6 text-slate-600" />
           </div>
-          <div className="text-slate-800 text-2xl font-bold ">نام محصول </div>
+          <div className="text-slate-800 text-2xl font-bold "> محصول </div>
           <div className="bg-stone-50 shadow-md rounded w-7 h-7 flex items-center justify-center">
             <HiOutlineSearch className="w-5 h-5" />
           </div>
@@ -72,7 +101,7 @@ const SingleProduct = () => {
                   {/* image */}
                   <div className=" flex items-center justify-center text-center w-56 h-72 mb-6 md:w-3/12 md:h-auto">
                     <img
-                      src="https://static2.o9.de/resource/blob/1251816/5debc5c085d08a0c5825d07fc7b8245b/apple-iphone-14-pro-max-dunkellila-gallerybild-9-data.png"
+                      src={product.image}
                       className="w-full h-auto "
                     />
                   </div>
@@ -80,8 +109,8 @@ const SingleProduct = () => {
                     {/* hedarer */}
                     <div className="flex flex-col gap-2 items-center justify-center md:items-start text-center mb-6 w-full ">
                       <h1 className="font-bold text-xl text-slate-800">
-                        آیفون 14 پرومکس 256
-                      </h1>
+                          {product.name}
+                        </h1>
                       <h2 className="font-bold text-sm text-gray-500">
                         Iphone 14 Pro Max 256
                       </h2>
@@ -94,7 +123,13 @@ const SingleProduct = () => {
                         <span className="bg-orange-600 rounded-full w-4 h-4"></span>
                         <span className="bg-green-600 rounded-full w-4 h-4"></span>
                       </div>
+                   
                     </div>
+                    <div>
+                        {/* {product.description[0].support} */}
+                        {/* {product.description[1].support}
+                        {product.description[2].support} */}
+                      </div>
                   </div>
                   <div className='md:flex-col  md:bg-white md:rounded-md md:w-4-12'>
                     {/* dec */}
@@ -122,12 +157,13 @@ const SingleProduct = () => {
                     </div>
                     {/* buttom */}
                     <div className="flex items-center justify-center gap-6 bg-white rounded-md pt-2 w-full md:flex-col md:justify-center md:items-center md:p-4 md:gap-2">
-                      <button className="bg-rose-600 rounded-md text-white px-5 py-3 text-lg md:order-2">
+                      <button onClick={()=>addHandler(product)}
+                       className="bg-rose-600 rounded-md text-white px-5 py-3 text-lg md:order-2">
                         اضافه به سبد خرید
                       </button>
-                      <div className="flex flex-col md:flex-row md:justify-between md:justify-items-center md:gap-2">
-                        <p className="text-slate-800 text-lg font-bold">
-                          9600000000{' '}
+                      <div className="flex flex-col md:flex-row md:items-center md:justify-between md:justify-items-center md:gap-2">
+                        <p className="text-slate-800 text-lg  font-bold">
+                         {product.price}
                         </p>
                         <p className="text-sm text-slate-800">تومان</p>
                       </div>

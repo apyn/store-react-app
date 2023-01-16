@@ -23,8 +23,8 @@ const CartPage = () => {
     dispatch({ type: 'REMOVE_PRODUCT', payload: cartitem })
   }
   return (
-    <main className="flex justify-center container mx-auto mt-6 gap-6">
-      <section className="flex flex-col ring-1 ring-gray-300 rounded-md  w-8/12">
+    <main className="flex flex-col items-center justify-center md:container md:flex-row md:items-start mx-auto mt-6 gap-6 ">
+      <section className="flex flex-col ring-1 ring-gray-300 rounded-md mg-red-100 w-full md:w-8/12">
         <div className="flex justify-between items-center p-4 ">
           <h1 className="font-bold text-slate-800">سبد خرید شما</h1>
           <HiOutlineTrash className="cursor-pointer hover:text-rose-700 h-6 w-6" />
@@ -101,7 +101,7 @@ const CartPage = () => {
         )}{' '}
       </section>
 
-      <section className="flex flex-col gap-y-4 ring-1 ring-gray-300 rounded-md p-4 w-4/12 h-56">
+      <section className="flex flex-col gap-y-4 ring-1 ring-gray-300 rounded-md p-4 w-full md:w-4/12 h-56">
         <div className="flex justify-between items-center  w-full">
           <p>قیمت کالاها</p>
           <p>{originalPrice} تومان</p>
