@@ -13,7 +13,7 @@ const Header = () => {
   const { cart } = useCart()
   const Auth = useAuth()
   return (
-    <nav className="hidden md:flex justify-between shadow-lg shadow-gray-200 rounded-b-md container mx-auto px-4 bg-slate-50">
+    <nav className="hidden md:flex justify-between shadow-lg shadow-gray-200 sticky top-0 rounded-b-md container mx-auto px-4 bg-slate-50">
       <ul className="flex items-center gap-2 ">
         <li className="px-4 py-3 text-violet-700 font-bold text-sm cursor-pointer rounded-md hover:text-violet-700 ">
           <NavLink to="/" className="">
@@ -37,13 +37,13 @@ const Header = () => {
           </NavLink>{' '}
         </li>
       </ul>
-      <div className="flex justify-center items-center ">
+      <div className="flex justify-center items-center flex-1 max-w-xl">
         <span className="relative">
           <HiSearch className=" -left-5 -top-2  absolute" />
         </span>
         <input
-          className="outline-none text-sm bg-violet-100 px-6 py-1 text-slate-800 rounded-md "
-          placeholder="جستجو..."
+          className="placeholder-slate-400 placehoder-sm outline-none text-sm bg-violet-100 px-6 py-2 text-slate-800 rounded-md w-full"
+          placeholder=" جستوجوی نام برند ، محصلول ..."
         />
       </div>
       <ul className="flex items-center justify-center">

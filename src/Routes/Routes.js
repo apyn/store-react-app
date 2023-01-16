@@ -6,6 +6,7 @@ import LoginPage from "../Pages/LoginPage";
 import NotFound from "../Pages/NotFound";
 import Profile from "../Pages/Profile";
 import SignupPage from "../Pages/Signup";
+import SingleProduct from "../Pages/SingleProductPage";
 
 
 const route=[
@@ -16,7 +17,8 @@ const route=[
     {path:"*" ,element:<NotFound/>},
     {path:"/login" , element:<LoginPage/>},
     {path:"/signup" , element:<SignupPage/>},
-    {path:"/profile" ,element:<Profile/>}
+    {path:"/profile" ,element:<Profile/>},
+    {path:"/singleproduct" , element:<SingleProduct/>}
 ]
 
 export default route
