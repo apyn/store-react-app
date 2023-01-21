@@ -5,7 +5,7 @@ import image3 from "../../Assets/Images/3.jpg"
 import image4 from "../../Assets/Images/4.jpg"
 const BlogSlider = () => {
     return ( 
-        <section className="container mx-auto">
+        <section className="container mx-auto mb-6">
             <div className="flex justify-between items-center p-4 md:p-2">
             <h1 className="text-slate-800 dark:text-zinc-300 font-extrabold md:text-lg  ">خواندنی ها</h1>
             <h1 className="text-blue-800 dark:text-zinc-300 font-extrabold text-sm cursor-pointer "> خواندن مطالب بیشتر</h1>
@@ -20,7 +20,7 @@ const BlogSlider = () => {
            <div className="flex justify-between items-center gap-x-4">
            <div className="flex justify-between items-center p-2">
                     <p className="bg-red-600 w-5 h-5 rounded-full"></p>
-                    <span className="text-gray-400 text-sm mr-2">نام نویسنده</span>
+                    <span className="text-gray-400 text-sm mr-2">پاینده</span>
                 </div>
                 <div className="flex justify-between items-center p-2">
                     <AiOutlineFieldTime className="text-gray-500"/>
@@ -36,7 +36,7 @@ const BlogSlider = () => {
            <div className="flex justify-between items-center gap-x-4">
            <div className="flex justify-between items-center p-2">
                     <p className="bg-red-600 w-5 h-5 rounded-full"></p>
-                    <span className="text-gray-400 text-sm mr-2">نام نویسنده</span>
+                    <span className="text-gray-400 text-sm mr-2">پاینده</span>
                 </div>
                 <div className="flex justify-between items-center p-2">
                     <AiOutlineFieldTime className="text-gray-500"/>
@@ -52,7 +52,7 @@ const BlogSlider = () => {
            <div className="flex justify-between items-center gap-x-4">
            <div className="flex justify-between items-center p-2">
                     <p className="bg-red-600 w-5 h-5 rounded-full"></p>
-                    <span className="text-gray-400 text-sm mr-2">نام نویسنده</span>
+                    <span className="text-gray-400 text-sm mr-2">پاینده</span>
                 </div>
                 <div className="flex justify-between items-center p-2">
                     <AiOutlineFieldTime className="text-gray-500"/>
@@ -68,7 +68,7 @@ const BlogSlider = () => {
            <div className="flex justify-between items-center gap-x-4">
            <div className="flex justify-between items-center p-2">
                     <p className="bg-red-600 w-5 h-5 rounded-full"></p>
-                    <span className="text-gray-400 text-sm mr-2">نام نویسنده</span>
+                    <span className="text-gray-400 text-sm mr-2">پاینده</span>
                 </div>
                 <div className="flex justify-between items-center p-2">
                     <AiOutlineFieldTime className="text-gray-500"/>

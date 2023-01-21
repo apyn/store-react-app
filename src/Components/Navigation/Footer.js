@@ -34,7 +34,7 @@ const Footer = () => {
       <div className=" container mx-auto hidden md:flex flex-col justify-between dark:bg-slate-700 bg-white rounded-t-md w-full">
     <div className="flex">
     <div className="w-6/12 p-4 ">
-        <h1 className="text-base font-bold text-slate-700 dark:text-slate-200">فروشگاه اینترنتی دیجی تایز</h1>
+        <h1 className="text-base font-bold text-slate-700 dark:text-slate-200">فروشگاه اینترنتی دیجی </h1>
         <p className="prose prose-sm prose-stone text-justify p-2 whitespace-pre-line dark:text-slate-200">
         لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با استفاده از طراحان گرافیک است. چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است و برای شرایط فعلی تکنولوژی مورد نیاز و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد.
         </p>
@@ -58,7 +58,7 @@ const Footer = () => {
         </div>
       </div>
     </div>
-        <div className="bg-zinc-100 w-full flex justify-center items-center text-sm py-1 text-slate-700 dark:text-zinc-300 dark:bg-slate-800 ">تمامی حقوق این سایت متعلق به سایت دی جی تایز می باشد</div>
+        <div className="bg-zinc-100 w-full flex justify-center items-center text-sm py-1 text-slate-700 dark:text-zinc-300 dark:bg-slate-800 ">تمامی حقوق این سایت متعلق به سایت دی جی pyn می باشد</div>
     </div>
     </>
       );

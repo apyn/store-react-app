@@ -1,4 +1,5 @@
 
+import * as data from '../../data'
 import { SwiperSlide ,Swiper, useSwiper} from "swiper/react";
 import  pic from "../../Assets/Images/1.png"
 const OffSlider = () => {
@@ -12,68 +13,23 @@ const OffSlider = () => {
     </h1>
   <img src="https://www.digikala.com/statics/img/png/specialCarousel/box.png"/>
    </div>
-    <div className="flex flex-col justify-center items-center p-2 shrink-0 overflow-hidden bg-white rounded-md " >
-     <div className="bg-gray-200  rounded-md mt-1 ">
-     <img  src={pic} className="w-40 h-40 object-contain"/>
-     </div>
- <div className="flex justify-between items-center p-4">
- <span className="text-slate-800 decoration-black text-sm font-extrabold ml-2">120000 تومان</span>
-      <span className=" text-center bg-rose-500 rounded-2xl text-white text-xs p-1">10 OFF</span>
- </div>
-   <span className="text-slate-500 line-through text-sm  mb-4" >150000 تومان</span> 
-    </div>
-    <div className="flex flex-col justify-center items-center p-2 shrink-0 overflow-hidden bg-white rounded-md " >
-     <div className="bg-gray-200  rounded-md mt-1 ">
-     <img  src={pic} className="w-40 h-40 object-contain"/>
-     </div>
- <div className="flex justify-between items-center p-4">
- <span className="text-slate-800 decoration-black text-sm font-extrabold ml-2">120000 تومان</span>
-      <span className=" text-center bg-rose-500 rounded-2xl text-white text-xs p-1">10 OFF</span>
- </div>
-   <span className="text-slate-500 line-through text-sm  mb-4" >150000 تومان</span> 
-    </div>
-    <div className="flex flex-col justify-center items-center p-2 shrink-0 overflow-hidden bg-white rounded-md " >
-     <div className="bg-gray-200  rounded-md mt-1 ">
-     <img  src={pic} className="w-40 h-40 object-contain"/>
-     </div>
- <div className="flex justify-between items-center p-4">
- <span className="text-slate-800 decoration-black text-sm font-extrabold ml-2">120000 تومان</span>
-      <span className=" text-center bg-rose-500 rounded-2xl text-white text-xs p-1">10 OFF</span>
- </div>
-   <span className="text-slate-500 line-through text-sm  mb-4" >150000 تومان</span> 
-    </div>
-    <div className="flex flex-col justify-center items-center p-2 shrink-0 overflow-hidden bg-white rounded-md " >
-     <div className="bg-gray-200  rounded-md mt-1 ">
-     <img  src={pic} className="w-40 h-40 object-contain"/>
-     </div>
- <div className="flex justify-between items-center p-4">
- <span className="text-slate-800 decoration-black text-sm font-extrabold ml-2">120000 تومان</span>
-      <span className=" text-center bg-rose-500 rounded-2xl text-white text-xs p-1">10 OFF</span>
- </div>
-   <span className="text-slate-500 line-through text-sm  mb-4" >150000 تومان</span> 
-    </div>
-    <div className="flex flex-col justify-center items-center p-2 shrink-0 overflow-hidden bg-white rounded-md " >
-     <div className="bg-gray-200  rounded-md mt-1 ">
-     <img  src={pic} className="w-40 h-40 object-contain"/>
-     </div>
- <div className="flex justify-between items-center p-4">
- <span className="text-slate-800 decoration-black text-sm font-extrabold ml-2">120000 تومان</span>
-      <span className=" text-center bg-rose-500 rounded-2xl text-white text-xs p-1">10 OFF</span>
- </div>
-   <span className="text-slate-500 line-through text-sm  mb-4" >150000 تومان</span> 
-    </div>
-    <div className="flex flex-col justify-center items-center p-2 shrink-0 overflow-hidden bg-white rounded-md " >
-     <div className="bg-gray-200  rounded-md mt-1 ">
-     <img  src={pic} className="w-40 h-40 object-contain"/>
-     </div>
- <div className="flex justify-between items-center p-4">
- <span className="text-slate-800 decoration-black text-sm font-extrabold ml-2">120000 تومان</span>
-      <span className=" text-center bg-rose-500 rounded-2xl text-white text-xs p-1">10 OFF</span>
- </div>
-   <span className="text-slate-500 line-through text-sm  mb-4" >150000 تومان</span> 
-    </div>
-  </div>
+   {data.products.map((product)=>{
+     return (
+      <div className="flex flex-col justify-center items-center p-2 shrink-0 overflow-hidden bg-white rounded-md " >
 
+      <div className="bg-gray-200  rounded-md mt-1 ">
+      <img  src={product.image} className="w-40 h-40 object-contain"/>
+      </div>
+  <div className="flex justify-between items-center p-4">
+  <span className="text-slate-800 decoration-black text-sm font-extrabold ml-2">{product.offPrice} تومان</span>
+       <span className=" text-center bg-rose-500 rounded-2xl text-white text-xs p-1"> {product.discount} </span>
+  </div>
+    <span className="text-slate-500 line-through text-sm  mb-4" >{product.price} تومان</span> 
+ </div>
+     
+    )
+   })}
+</div>
     </section>
   )
 }

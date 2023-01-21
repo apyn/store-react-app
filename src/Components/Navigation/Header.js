@@ -7,6 +7,7 @@ import {
   HiChevronDown,
   HiDeviceMobile,
 } from 'react-icons/hi'
+import {BsPaypal} from "react-icons/bs"
 import { Menu } from '@headlessui/react'
 
 import {IoGameControllerOutline as Game} from "react-icons/io5"
@@ -43,7 +44,7 @@ const Header = () => {
           <ul className=" md:flex items-center md:gap-2 z-40">
             <li className="px-4 py-3 dark:text-white text-violet-700 font-bold text-sm cursor-pointer rounded-md hover:text-violet-700 ">
               <NavLink to="/" className="">
-                <HiCamera className="w-8 h-8 hidden md:block" />
+                <BsPaypal className="w-8 h-8 hidden md:block" />
               </NavLink>
             </li>
             <li className="relative px-4 py-3 text-slate-800 dark:text-slate-200 font-bold text-sm cursor-pointer rounded-md dark:hover:text-violet-400 hover:text-violet-700 ">

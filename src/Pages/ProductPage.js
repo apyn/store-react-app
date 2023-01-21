@@ -1,4 +1,4 @@
-// import * as data from '../data'
+import * as data from '../data'
 import toast from 'react-hot-toast'
 import {
   HiShoppingCart,
@@ -35,18 +35,18 @@ const ProductPage = () => {
   {checkincart(cart, product) ? navi("/cart") :   navi(`/singleproduct/${product._id}`)
 } 
   }
-  useEffect(() => {
-    const getProduct = async () => {
-      try {
-        const { data } = await axios.get('http://localhost:5000/api/product')
-        setProducts(data)
-      } catch (error) {
-        console.log(error)
-      }
-    }
+  // useEffect(() => {
+  //   const getProduct = async () => {
+  //     try {
+  //       const { data } = await axios.get('http://localhost:5000/api/product')
+  //       setProducts(data)
+  //     } catch (error) {
+  //       console.log(error)
+  //     }
+  //   }
 
-    getProduct()
-  }, [])
+  //   getProduct()
+  // }, [])
   return (
    
     
@@ -160,7 +160,7 @@ const ProductPage = () => {
     </div>
     <div className='col-span-12 md:col-span-9 mx-4 md:mx-auto '>
     <div className="grid  gap-2 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 ">
-        {products.map((product) => {
+        {data.products.map((product) => {
           return (
             <div className="bg-white dark:bg-slate-700 rounded-md shadow-lg p-3">
               <div className="w-full h-auto rounded-md bg-gray-100 dark:bg-gray-400 p-1 overflow-hidden mb-2">
@@ -179,7 +179,7 @@ const ProductPage = () => {
                 {product.name}
               </div>
               <div className="flex items-center justify-end mb-2 text-base md:text-lg font-bold text-violet-800 dark:text-slate-200">
-                {product.price} $
+                {product.price} تومان
               </div>
               <button   onClick={() => clickHandler(product)}
               className="bg-violet-700 text-white rounded-md text-center font-bold w-full p-2">
