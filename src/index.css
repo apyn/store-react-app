@@ -7,13 +7,20 @@
 *{
   margin: 0;
   padding: 0;
-  border-style: none;
+  list-style: none;
   box-sizing: border-box;
 
 }
 body {
- background-color: #E5E5E5;
+ background-color: #f6f6f6f6;
   font-family:"iranyekan";
-  height: 100%;
-width: 100%;
+
+}
+
+body > #root > div {
+  height: 100vh;
+}
+
+html, body, #root, #root>div {
+  height: 100%
 }

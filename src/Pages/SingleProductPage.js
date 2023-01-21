@@ -43,7 +43,7 @@ navi("/cart")
 },[])
 
   return (
-    <section className=" container mx-auto mt-4  ">
+    <section className=" mb-4 ">
       <section className=" container mx-auto mt-4  ">
         <div className="flex justify-between items-center mt-10 mx-4 mb-6 md:hidden ">
           <div className="bg-stone-50 shadow-md rounded w-7 h-7 flex items-center justify-center">
