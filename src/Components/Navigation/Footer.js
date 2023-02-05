@@ -7,24 +7,24 @@ const Footer = () => {
 
     return (
       <>
-    <div className="   fixed  bottom-0 left-0 right-0 w-full bg-white rounded-t-md shadow-md  "> 
+    <div className="    w-full bg-white rounded-t-md shadow-md  dark:bg-slate-800 dark:shadow-zinc-300 "> 
     <ul className="md:hidden flex items-center justify-between rounded-t-md overflow-hidden">
-      <li  className= 'flex flex-col items-center justify-center gap-x-4 p-2 w-full text-slate-800 '>
+      <li  className= 'flex flex-col items-center justify-center gap-x-4 p-2 w-full text-slate-800 dark:text-zinc-300 '>
         <HiOutlineHome className="w-6 h-6"/>
         <Link to="/" className="text-xs mt-1">خانه</Link>
       </li>
-      <li className=" flex flex-col items-center justify-center gap-x-4 p-2 w-full text-slate-800 ">
+      <li className=" flex flex-col items-center justify-center gap-x-4 p-2 w-full text-slate-800 dark:text-zinc-300 ">
       <HiOutlineViewGrid className="w-6 h-6"/>
         <Link to="/products" className="text-xs mt-1">دسته بندی</Link>
       </li>
-      <li className="relative flex flex-col items-center justify-center gap-x-4 p-2 w-full text-slate-800 ">
+      <li className="relative flex flex-col items-center justify-center gap-x-4 p-2 w-full text-slate-800 dark:text-zinc-300 ">
          <HiOutlineShoppingCart className="w-6 h-6"/>
         <Link to="/cart" className="text-xs mt-1">سبد خرید</Link>
-        <span className="bg-red-600  text-xs font-light flex items-center justify-center  text-white rounded-full h-4 w-4 absolute left-5 top-1 ">
+        <span className="bg-red-600  text-xs font-light flex items-center justify-center dark:text-zinc-300  text-white rounded-full h-4 w-4 absolute left-5 top-1 ">
                   {cart.length}
                 </span>
       </li>
-      <li className=" flex flex-col items-center justify-center gap-x-4 p-2 w-full text-slate-800 ">
+      <li className=" flex flex-col items-center justify-center gap-x-4 p-2 w-full text-slate-800 dark:text-zinc-300 ">
       <HiHeart className="w-6 h-6"/>
         <Link to="/favorits" className="text-xs mt-1">علاقه مندی</Link>
       </li>

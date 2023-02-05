@@ -20,27 +20,27 @@ const SingleProduct = () => {
   const [product,setProduct]=useState([])
   const dispatch= useCartActions()
 
-  const {_id} = useParams()
+  const {id} = useParams()
   const navi=useNavigate()
 const addHandler=(product)=>{
 dispatch({type:"ADD_TO_CART",payload:product})
 navi("/cart")
     toast.success(`${product.name} به سبد خرید اضافه شد`)
   }
-  useEffect(()=>{
+//   useEffect(()=>{
 
-    const getProduct = async () => {
-      try {
-        const { data } = await axios.get(`http://localhost:5000/api/product/${_id}`)
-        console.log(data.description[0].support)
-      setProduct(data)
-      } catch (error) {
-        console.log(error)
-      }
-    }
+//     const getProduct = async () => {
+//       try {
+//         const { data } = await axios.get(`http://localhost:5000/api/product/${_id}`)
+//         console.log(data.description[0].support)
+//       setProduct(data)
+//       } catch (error) {
+//         console.log(error)
+//       }
+//     }
 
-    getProduct()
-},[])
+//     getProduct()
+// },[])
 
   return (
     <section className=" mb-4 ">

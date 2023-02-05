@@ -8,7 +8,7 @@ const Checkout = () => {
   const user = useAuth()
   const { cart, total } = useCart()
   const originalPrice = cart.length
-    ? cart.reduce((acc, curr) => acc + curr.quantity * curr.price, 0)
+    ? cart.reduce((acc, curr) => acc + curr.quantity * curr.price)
     : 0
   return (
     <main className="flex flex-col md:flex-row justify-center  container mx-auto mt-6 mb-20 gap-6">

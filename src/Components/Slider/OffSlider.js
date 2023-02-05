@@ -6,7 +6,7 @@ const OffSlider = () => {
  
   return (
     <section className="container mx-auto">
-  <div onMouseMove={true } className="flex justify-start gap-x-1 items-center overflow-auto flex-nowrap scrollbar-hide cursor-pointer bg-violet-200 p-4 mb-4 rounded-md shadow-lg dark:bg-slate-700 dark:shadow-slate-600">
+  <div onMouseMove={true } className="flex justify-start gap-x-1 items-center overflow-auto flex-nowrap scrollbar-hide cursor-pointer bg-violet-200 p-4 mb-4 rounded-md shadow-md dark:bg-slate-700 dark:shadow-slate-700">
    <div>
    <h1 className="ml-4 text-slate-800 font-bold dark:text-zinc-300 md:text-2xl text-center">
       پیشنهادات شگفت انگیز

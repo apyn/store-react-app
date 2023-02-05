@@ -12,7 +12,7 @@ const reducer = (state, action) => {
     case 'ADD_TO_CART':
       const updatedcart = [...state.cart]
       const index = updatedcart.findIndex(
-        (item) => item._id === action.payload._id,
+        (item) => item.id === action.payload.id,
       )
       if (index < 0) {
         updatedcart.push({ ...action.payload, quantity: 1 })
@@ -26,11 +26,11 @@ const reducer = (state, action) => {
     case 'REMOVE_PRODUCT': {
       const updatedcart = [...state.cart]
       const index = updatedcart.findIndex(
-        (item) => item._id === action.payload._id,
+        (item) => item.id === action.payload.id,
       )
       const updatedItem = {...updatedcart[index]}
       if(updatedItem.quantity ===1){
-        const filterd=updatedcart.filter((item)=> item._id !== action.payload._id)
+        const filterd=updatedcart.filter((item)=> item.id !== action.payload.id)
 return {...state, cart:filterd ,total:state.total - action.payload.offPrice}
       }else{
         updatedItem.quantity--
@@ -47,10 +47,10 @@ const CartProviders = ({ children }) => {
  
   const [cart, dispatch] = useReducer(reducer, initialState)
   // console.log(cart)
-useEffect(()=>{
-  const data =JSON.parse(localStorage.getItem("PRODUCTS")) || false
+// useEffect(()=>{
+//   const data =JSON.parse(localStorage.getItem("PRODUCTS")) || false
 
-},[])
+// },[])
 
   return (
     <Cartcontext.Provider value={cart}>

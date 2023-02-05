@@ -59,16 +59,16 @@ const [error,setError]=useState(null)
     <section className="flex justify-center items-center container mx-auto p-4 mt-6 mb-4">
       <form
         onSubmit={formik.handleSubmit}
-        className="ring-1  ring-gray-300 rounded-md w-96 flex flex-col  p-4"
+        className="ring-1  ring-gray-300 dark:text-zinc-300 rounded-md w-96 flex flex-col  p-4"
       >
-        <h1 className=" text-center text-3xl font-black  text-indigo-700 mb-4">
+        <h1 className=" text-center text-3xl font-black dark:text-zinc-300 text-indigo-700 mb-4">
           فروشگاه{' '}
         </h1>
-        <p className="text-slate-700 mb-4">ثبت نام </p>
+        <p className="text-slate-700 dark:text-zinc-300 mb-4">ثبت نام </p>
         
         <div className="flex flex-col mt-2 ">
           <div className="flex justify-between items-center">
-            <label className="text-slate-500 text-sm">نام و نام خانوادگی</label>
+            <label className="text-slate-500 dark:text-zinc-300 text-sm">نام و نام خانوادگی</label>
             {formik.errors.name && formik.touched.name && (
               <p className="text-red-500 text-xs flex">{formik.errors.name}</p>
             )}
@@ -77,12 +77,12 @@ const [error,setError]=useState(null)
             {...formik.getFieldProps('name')}
             name="name"
             type="text"
-            className="outline-none ring-1 mt-2 ring-gray-400 px-4 py-2 rounded-md text-slate-700 focus:ring-2 focus:ring-indigo-700 "
+            className="outline-none ring-1 mt-2 ring-gray-400 px-4 py-2 rounded-md dark:text-zinc-300 text-slate-700 focus:ring-2 focus:ring-indigo-700 "
           />
         </div>
         <div className="flex flex-col mt-2">
           <div className="flex justify-between items-center">
-            <label className="text-slate-500 text-sm"> ایمیل </label>
+            <label className="text-slate-500 text-sm dark:text-zinc-300"> ایمیل </label>
             {formik.errors.email && formik.touched.email && (
               <p className="text-red-500 text-xs flex">{formik.errors.email}</p>
             )}
@@ -96,7 +96,7 @@ const [error,setError]=useState(null)
         </div>
         <div className="flex flex-col mt-2">
           <div className="flex justify-between items-center">
-            <label className="text-slate-500 text-sm"> شماره موبایل </label>
+            <label className="text-slate-500 dark:text-zinc-300 text-sm"> شماره موبایل </label>
             {formik.errors.phoneNumber && formik.touched.phoneNumber && (
               <p className="text-red-500 text-xs flex">
                 {formik.errors.phoneNumber}
@@ -112,7 +112,7 @@ const [error,setError]=useState(null)
         </div>
         <div className="flex flex-col mt-2">
           <div className="flex justify-between items-center">
-            <label className="text-slate-500 text-sm">کلمه عبور </label>
+            <label className="text-slate-500 text-sm dark:text-zinc-300">کلمه عبور </label>
             {formik.errors.password && formik.touched.password && (
               <p className="text-red-500 text-xs flex">
                 {formik.errors.password}
@@ -128,7 +128,7 @@ const [error,setError]=useState(null)
         </div>
         <div className="flex flex-col mt-2">
           <div className="flex justify-between items-center">
-            <label className="text-slate-500 text-sm"> تکرار کلمه عبور </label>
+            <label className="text-slate-500 text-sm dark:text-zinc-300"> تکرار کلمه عبور </label>
             {formik.errors.passwordconfirm &&
               formik.touched.passwordconfirm && (
                 <p className="text-red-500 text-xs flex">
@@ -146,7 +146,7 @@ const [error,setError]=useState(null)
         <button
           disabled={!formik.isValid}
           type="submit"
-          className="bg-indigo-700 text-white font-bold px-4 py-3 mt-6 rounded-md cursor-pointer  disabled:bg-gray-400
+          className="bg-indigo-700 text-white  font-bold px-4 py-3 mt-6 rounded-md cursor-pointer  disabled:bg-gray-400
           "
         >
           ثبت نام

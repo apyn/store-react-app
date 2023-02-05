@@ -21,9 +21,11 @@ import { useEffect, useState } from 'react'
 import axios from 'axios'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 const checkincart = (cart, p) => {
-  return cart.find((c) => c._id === p._id)
+  return cart.find((c) => c.id === p.id)
 }
 const ProductPage = () => {
+  const dispatch= useCartActions()
+
   const [isfilter,setisFilter]=useState(true)
   const[iscolor,setiscolor]=useState(false)
   const [products, setProducts] = useState([])
@@ -31,9 +33,12 @@ const ProductPage = () => {
      const navi= useNavigate()
 
   const clickHandler = (product) => {
+    dispatch({type:"ADD_TO_CART",payload:product})
+// navi("/cart")
+    toast.success(`${product.name} به سبد خرید اضافه شد`)
   // navi(`/singleproduct/${product._id}`)
-  {checkincart(cart, product) ? navi("/cart") :   navi(`/singleproduct/${product._id}`)
-} 
+  {checkincart(cart, product) ? navi("/cart") :   navi(``)}
+// } 
   }
   // useEffect(() => {
   //   const getProduct = async () => {
@@ -55,94 +60,94 @@ const ProductPage = () => {
         <div className="flex items-center justify-center w-7 h-7">
           <FaDigitalOcean className="w-6 h-6 text-violet-600" />
         </div>
-        <div className="text-slate-800  text-2xl font-bold ">ساعت هوشمند</div>
-        <div className="bg-stone-50 dark:bg-slate-700 dark:text-slate-200 shadow-md rounded w-7 h-7 flex items-center justify-center">
+        <div className="text-slate-800 dark:text-zinc-300 text-2xl font-bold ">ساعت هوشمند</div>
+        <div className="bg-stone-50 dark:bg-slate-700 dark:text-zinc-300 shadow-md rounded w-7 h-7 flex items-center justify-center">
           <HiOutlineSearch className="w-5 h-5" />
         </div>
       </div>
 
       <div className=" flex justify-center items-center  mx-4 gap-x-4 mb-8 md:mb-2 md:hidden">
-        <div className="flex items-center justify-center rounded-md bg-white dark:bg-slate-700 dark:text-slate-200 px-2 py-3 w-full">
+        <div className="flex items-center justify-center rounded-md bg-white dark:bg-slate-700 dark:text-zinc-300 px-2 py-3 w-full">
           <HiOutlineSortDescending className="w-5 h-5 ml-2 text-violet-600" />
-          <p className="text-sm text-slate-800 dark:text-slate-200">محبوب ترین محصول</p>
+          <p className="text-sm text-slate-800 dark:text-zinc-300">محبوب ترین محصول</p>
         </div>
-        <div className="flex justify-center items-center bg-white dark:bg-slate-700 dark:text-slate-200 rounded-md px-2 py-3 w-full">
-          <HiOutlineFilter className="w-5 h-5 ml-2 text-gray-400 dark:text-slate-200" />
-          <p className="text-sm text-slate-800 dark:text-slate-200">فیلتر : اپل</p>
+        <div className="flex justify-center items-center bg-white dark:bg-slate-700 dark:text-zinc-300 rounded-md px-2 py-3 w-full">
+          <HiOutlineFilter className="w-5 h-5 ml-2 text-gray-400 dark:text-zinc-300" />
+          <p className="text-sm text-slate-800 dark:text-zinc-300">فیلتر : اپل</p>
         </div>
       </div>
     <div className='grid grid-cols-12 grid-rows-[50px,minmax(500px,1fr)]   md:gap-8'>
    
         <div className='hidden md:block  col-span-3  row-span-2  '>
-          <div className=' bg-white dark:bg-slate-700 rounded-md p-4 '>
+          <div className=' bg-white dark:bg-slate-700 dark:text-zinc-300 rounded-md p-4 '>
             <div className='p-4'>
-              <h1 className='text-violet-700 font-bold text-2xl md:text-base'>دسته بندی</h1>
+              <h1 className='text-violet-700 dark:text-zinc-300 font-bold text-2xl md:text-base'>دسته بندی</h1>
               <div className='p-4'>
                <div className='flex justify-start items-center cursor-pointer mb-4'>
-               <HiOutlineDeviceMobile className='w-6 h-6  stroke-slate-800 ml-2'/>
-                <p className='text-slate-800  md:text-base '> تلفن همراه</p>
+               <HiOutlineDeviceMobile className='w-6 h-6  stroke-slate-800  dark:stroke-zinc-300 ml-2'/>
+                <p className='text-slate-800  md:text-base  dark:text-zinc-300'> تلفن همراه</p>
                </div>
                <div className='flex justify-start items-center cursor-pointer mb-4'>
-               <HiOutlineDesktopComputer className='w-6 h-6 stroke-slate-800 ml-2'/>
-                <p className='text-slate-800 md:text-base' >کامپیوتر  </p>
+               <HiOutlineDesktopComputer className='w-6 h-6 stroke-slate-800 ml-2 dark:strole-zinc-300'/>
+                <p className='text-slate-800 md:text-base dark:text-zinc-300' >کامپیوتر  </p>
                </div>
                <div className='flex justify-start items-center cursor-pointer'>
-               <TbDeviceWatch className='w-6 h-6 stroke-slate-800 ml-2'/>
-                <p className='text-slate-800 md:text-base' >ساعت  </p>
+               <TbDeviceWatch className='w-6 h-6 stroke-slate-800 ml-2 dark:stroke-zinc-300'/>
+                <p className='text-slate-800 md:text-base dark:text-zinc-300' >ساعت  </p>
                </div>
                
               </div>
             </div>
             <div className=' dark:bg-slate-700 p-4'>
-              <h1 className=' font-bold text-violet-700'> فیلتر</h1>
+              <h1 className=' font-bold text-violet-700 dark:text-zinc-300'> فیلتر</h1>
               <div className='p-4  flex flex-col   '>
              
                 <button className='flex items-center justify-center' onClick={()=>setisFilter(!isfilter)}>  
-               <HiOutlineFilter className='w-6 h-6 text-slate-800 ml-2'/>
+               <HiOutlineFilter className='w-6 h-6 text-slate-800 dark:text-zinc-300 ml-2'/>
                <span>برند محصلول</span>
-               <HiChevronDown className={`w-5 h-5 text-slate-700  mr-8   ${isfilter ? "-rotate-180" : ""} `}/>
+               <HiChevronDown className={`w-5 h-5 text-slate-700 dark:text-zinc-300 mr-8   ${isfilter ? "-rotate-180" : ""} `}/>
                 </button>
                 <div className={isfilter ? "p-4 h-auto flex flex-col" : "hidden"}>
                   <label>
-                    <input type="checkbox" className="from-checkbox text-violet-700 focus:ring-violet-700 rounded"/>
-                    <span className='text-slate-800 mr-2 text-sm '> اپل</span>
+                    <input type="checkbox" className="from-checkbox text-violet-700  focus:ring-violet-700 rounded"/>
+                    <span className='text-slate-800 mr-2 text-sm  dark:text-zinc-300'> اپل</span>
                   </label>
                   <label>
                     <input type="checkbox" className="from-checkbox text-violet-700 focus:ring-violet-700  rounded"/>
-                    <span className='text-slate-800 mr-2 text-sm '> سامسونگ</span>
+                    <span className='text-slate-800 mr-2 text-sm dark:text-zinc-300 '> سامسونگ</span>
                   </label>
                   <label>
                     <input type="checkbox" className="from-checkbox text-violet-700 focus:ring-violet-700  rounded"/>
-                    <span className='text-slate-800 mr-2 text-sm '> شیائومی</span>
+                    <span className='text-slate-800 mr-2 text-sm dark:text-zinc-300'> شیائومی</span>
                   </label>
                   <label>
                     <input type="checkbox" className="from-checkbox text-violet-700 focus:ring-violet-700  rounded"/>
-                    <span className='text-slate-800 mr-2 text-sm '> هواوی</span>
+                    <span className='text-slate-800 mr-2 text-sm dark:text-zinc-300 '> هواوی</span>
                   </label>
-               
+                
               
                 </div>
                 <button className='flex items-center justify-center mt-4' onClick={()=>setiscolor(!iscolor)}>  
-               <HiOutlineColorSwatch className='w-6 h-6 text-slate-800 ml-2'/>
+               <HiOutlineColorSwatch className='w-6 h-6 text-slate-800 dark:text-zinc-300 ml-2'/>
                <span>رنگ محصلول</span>
-               <HiChevronDown className={`w-5 h-5 text-slate-700  mr-8   ${iscolor ? "-rotate-180" : ""} `}/>
+               <HiChevronDown className={`w-5 h-5 text-slate-700 dark:text-zinc-300  mr-8   ${iscolor ? "-rotate-180" : ""} `}/>
                 </button>
                 <div className={iscolor ? "p-4 h-auto flex flex-col " : "hidden"}>
                 <label>
                     <input type="checkbox" className="from-checkbox text-blue-700 focus:ring-blue-700 rounded"/>
-                    <span className='text-slate-800 mr-2 text-sm '> آبی</span>
+                    <span className='text-slate-800 mr-2 text-sm dark:text-zinc-300'> آبی</span>
                   </label>
                   <label>
                     <input type="checkbox" className="from-checkbox text-red-700 focus:ring-red-700 rounded"/>
-                    <span className='text-slate-800 mr-2 text-sm '> قرمز</span>
+                    <span className='text-slate-800 mr-2 text-sm dark:text-zinc-300 '> قرمز</span>
                   </label>
                   <label>
                     <input type="checkbox" className="from-checkbox text-black focus:ring-black  rounded"/>
-                    <span className='text-slate-800 mr-2 text-sm '> مشکی</span>
+                    <span className='text-slate-800 mr-2 text-sm dark:text-zinc-300 '> مشکی</span>
                   </label>
                   <label>
                     <input type="checkbox" className="from-checkbox text-green-700 focus:ring-green-700  rounded"/>
-                    <span className='text-slate-800 mr-2 text-sm '> سبز</span>
+                    <span className='text-slate-800 mr-2 text-sm  dark:text-zinc-300'> سبز</span>
                   </label>
                 </div>
               </div>
@@ -178,12 +183,12 @@ const ProductPage = () => {
               <div className="flex items-center justify-center mb-2 text-base md:text-lg font-bold dark:text-gray-200 text-slate-800">
                 {product.name}
               </div>
-              <div className="flex items-center justify-end mb-2 text-base md:text-lg font-bold text-violet-800 dark:text-slate-200">
+              <div className="flex items-center justify-end mb-2 text-base md:text-lg font-bold text-violet-800 dark:text-zinc-300">
                 {product.price} تومان
               </div>
               <button   onClick={() => clickHandler(product)}
               className="bg-violet-700 text-white rounded-md text-center font-bold w-full p-2">
- {checkincart(cart, product) ? 'ادامه سفارش' : 'مشاهده'}              </button>
+ {checkincart(cart, product) ? 'ادامه سفارش' : 'خرید'}              </button>
             </div>
           )
         })}
@@ -197,9 +202,9 @@ const ProductPage = () => {
   )
 }
 
-export default ProductPage
+export default ProductPage;
 
-{
+
   /* <main className="mt-10 mb-4">
 <section className="grid grid-cols-[repeat(auto-fit,minmax(260px,1fr))] max-w-7xl container mx-auto gap-x-10 gap-y-6">
   {products.map((product) => {
@@ -227,4 +232,3 @@ export default ProductPage
   })}
 </section>
 </main>  */
-}

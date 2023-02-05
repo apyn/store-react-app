@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 const Categpry = () => {
   return (
-    <section className="container mx-auto mt-4 mb-4 dark:bg-slate-700 rounded-md p-2 ">
+    <section className="container mx-auto mt-4 mb-4 dark:bg-slate-700 rounded-md p-2 shadow-md dark:shadow-slate-700 ">
         <h1 className="text-center font-bold md:text-2xl text-slate-800 mb-4 dark:text-zinc-300 ">دسته بندی محصولات </h1>
       <div className=" flex md:justify-evenly justify-center gap-4 items-center p-4 flex-wrap">
         <div className="flex flex-col justify-center items-center cursor-pointer">

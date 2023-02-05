@@ -6,7 +6,7 @@ import BlogSlider from "../Components/Slider/BlogSlider";
 
 const HomePage = () => {
     return (  
-        <div>
+        <div >
             <Slider/>
             <Categpry/>
             <OffSlider/>

@@ -30,7 +30,7 @@ const Header = () => {
     <nav className="sticky top-0 z-50">
       <div className=" flex items-center px-4 justify-between md:hidden">
         <button className="" onClick={() => setNavbar(!navbar)}>
-          <Hamburger/>
+          <Hamburger className="dark:text-zinc-300"/>
         </button>
           <Switcher className="w-4 h-4  md:hidden" />
       </div>
@@ -40,23 +40,23 @@ const Header = () => {
           navbar ? 'block' : 'hidden'
         }`}
       >
-        <nav className=" md:flex justify-between md:shadow-lg md:shadow-gray-200 dark:shadow-gray-700   md:rounded-b-md  px-4 bg-slate-50 dark:bg-slate-700 dark:text-white">
+        <nav className=" md:flex justify-between md:shadow-lg md:shadow-gray-200 dark:shadow-zinc-600     px-4 bg-slate-50 dark:bg-slate-800 dark:text-white">
           <ul className=" md:flex items-center md:gap-2 z-40">
-            <li className="px-4 py-3 dark:text-white text-violet-700 font-bold text-sm cursor-pointer rounded-md hover:text-violet-700 ">
+            <li className="px-4 py-3 dark:text-zinc-300 text-violet-700 font-bold text-sm cursor-pointer rounded-md ">
               <NavLink to="/" className="">
                 <BsPaypal className="w-8 h-8 hidden md:block" />
               </NavLink>
             </li>
-            <li className="relative px-4 py-3 text-slate-800 dark:text-slate-200 font-bold text-sm cursor-pointer rounded-md dark:hover:text-violet-400 hover:text-violet-700 ">
+            <li className="relative px-4 py-3 text-slate-800 dark:text-zinc-300 font-bold text-base cursor-pointer  dark:hover:text-zinc-400 hover:text-violet-700 ">
               <NavLink to="/" className="">
                 خانه
               </NavLink>
             </li>
-            <li className=" px-4 py-3 relative text-slate-800  dark:text-slate-200 font-bold text-sm cursor-pointer rounded-md  ">
+            <li className=" px-4 py-3 relative text-slate-800  dark:text-zinc-300 font-bold text-base cursor-pointer   ">
               <Menu >
                 <Menu.Button  className="flex items-center justify-between " >
                    محصولات
-                    <HiChevronDown className="w-5 h-5 text-slate-800 mr-2" />
+                    <HiChevronDown className="w-5 h-5 fill-slate-800 mr-2 dark:fill-zinc-300 " />
                 </Menu.Button>
                 <Menu.Items className="grid grid-cols-2 gap-2 absolute w-96   text-xs p-4 rounded-md dark:bg-slate-700 shadow-lg  bg-white">
                     <Menu.Item>
@@ -65,7 +65,7 @@ const Header = () => {
                        <BsPhone className='w-8 h-8'/>
                        <div className='flex flex-col mr-2 justify-center items-start'>
                        <Link to="/products" className='text-slate-800 text-lg dark:text-zinc-300 font-bold ' >موبایل</Link>
-                       <span className='text-gray-500 font-xs '>اپل - سامسونگ ...</span>
+                       <span className='text-gray-500 font-xs dark:text-zinc-400 '>اپل - سامسونگ ...</span>
                        </div>
                      </div>
                     )}
@@ -76,7 +76,7 @@ const Header = () => {
                       <BsLaptop className='w-8 h-8'/>
                       <div className='flex flex-col mr-2 justify-center items-start'>
                       <Link to="#" className='text-slate-800 text-lg dark:text-zinc-300 font-bold ' >لپ تاپ  </Link>
-                     <span className='text-gray-500 font-xs '>اپل - ایسوس  ...</span>
+                     <span className='text-gray-500 font-xs  dark:text-zinc-400'>اپل - ایسوس  ...</span>
                       </div>
                     </div>
                     )}
@@ -87,7 +87,7 @@ const Header = () => {
                     <BsTablet className='w-8 h-8'/>
                     <div className='flex flex-col mr-2 justify-center items-start'>
                     <Link to="#" className='text-slate-800 text-lg dark:text-zinc-300 font-bold ' >تبلت</Link>
-                    <span className='text-gray-500 font-xs '>سونی - سامسونگ </span>
+                    <span className='text-gray-500 font-xs  dark:text-zinc-400 '>سونی - سامسونگ </span>
                     </div>
                   </div>
                     )}
@@ -98,7 +98,7 @@ const Header = () => {
                     <Game className='w-8 h-8'/>
                     <div className='flex flex-col mr-2 justify-center items-start'>
                     <Link to="#" className='text-slate-800 text-lg dark:text-zinc-300 font-bold ' >گیمینگ</Link>
-                    <span className='text-gray-500 font-xs '>PS5 -PS4 - xbox </span>
+                    <span className='text-gray-500 font-xs  dark:text-zinc-400'>PS5 -PS4 - xbox </span>
                     </div>
                   </div>
                     )}
@@ -109,7 +109,7 @@ const Header = () => {
                     <BsSmartwatch className='w-8 h-8'/>
                     <div className='flex flex-col mr-2 justify-center items-start'>
                     <Link to="#" className='text-slate-800 dark:text-zinc-300 text-sm font-bold ' >ساعت هوشمند</Link>
-                    <span className='text-gray-500 font-xs '>اپل - شیائمی ...</span>
+                    <span className='text-gray-500 font-xs  dark:text-zinc-400 '>اپل - شیائمی ...</span>
                     </div>
                   </div>
                     )}
@@ -120,7 +120,7 @@ const Header = () => {
                        <BiJoystickButton className='w-8 h-8'/>
                        <div className='flex flex-col mr-2 justify-center items-start'>
                        <Link to="#" className='text-slate-800 text-lg dark:text-zinc-300 font-bold ' >لوازم جانبی</Link>
-                       <span className='text-gray-500 font-xs '>قاب گوشی - گلس </span>
+                       <span className='text-gray-500 font-xs  dark:text-zinc-400 '>قاب گوشی - گلس </span>
                        </div>
                      </div>
                     )}
@@ -131,15 +131,15 @@ const Header = () => {
               
            
             </li>
-            <li className="px-4 py-3 text-slate-800 dark:text-slate-200 font-bold text-sm cursor-pointer rounded-md hover:text-violet-700 ">
+            <li className="px-4 py-3 text-slate-800 dark:text-zinc-300 font-bold text-base dark:hover:text-zinc-400 cursor-pointer  hover:text-violet-700 ">
               <NavLink to="/" className="">
                 بلاگ
               </NavLink>{' '}
             </li>
-            <li className=" px-4 py-3 relative text-slate-800  dark:text-slate-200 font-bold text-sm cursor-pointer rounded-md ">
+            <li className=" px-4 py-3 relative text-slate-800   dark:text-zinc-300 font-bold text-base cursor-pointer  ">
               <Menu>
            <Menu.Button className="flex">ارتباط با ما
-                <HiChevronDown className="w-5 h-5 text-slate-800 mr-2" />
+                <HiChevronDown className="w-5 h-5 fill-slate-800 mr-2 dark:fill-zinc-300" />
                 </Menu.Button>
                 <Menu.Items className="flex flex-col w-40 mt-2 right-1 absolute overflow-hidden shadow-lg">
                   <Menu.Item >
@@ -164,10 +164,10 @@ const Header = () => {
 
           <div className="hidden md:flex justify-center items-center flex-1 max-w-xl">
             <span className="relative">
-              <HiSearch className=" -left-5 -top-2  absolute" />
+              <HiSearch className=" -left-5 -top-2  absolute dark:fill-slate-800" />
             </span>
             <input
-              className="	 placeholder-slate-400 placehoder-sm outline-none text-sm bg-violet-100 px-6 py-2 text-slate-800 dark:text-slate-300 rounded-md w-full"
+              className="	dark:bg-zinc-300 placeholder-slate-500 placehoder-sm outline-none text-sm bg-violet-100 px-6 py-2 text-slate-800  rounded-md w-full"
               placeholder=" جستوجوی نام برند ، محصلول ..."
             />
           </div>
@@ -175,15 +175,15 @@ const Header = () => {
             <li className=" px-4 py-3 cursor-pointer rounded-md hidden md:block">
               <Switcher className="w-4 h-4 " />
             </li>
-            <li className="hidden md:block px-4 py-3 text-violet-700 font-bold text-sm cursor-pointer rounded-md hover:bg-gray-100  hover:text-violet-700 ">
+            <li className="hidden md:block px-4 py-3 text-violet-700 font-bold  cursor-pointer rounded-md hover:bg-gray-100  dark:hover:bg-slate-600 dark:hover:fill-zinc-300 hover:text-violet-700 ">
               <NavLink to="/cart" className="relative">
-                <HiOutlineShoppingCart className="h-5 w-5 " />
+                <HiOutlineShoppingCart className="h-6 w-6 " />
                 <span className="bg-red-600  text-xs font-light flex items-center justify-center  text-white rounded-full h-4 w-4 absolute -left-3 -top-2 ">
                   {cart.length}
                 </span>
               </NavLink>
             </li>
-            <li className="hidden md:block px-4 py-3 text-violet-700  font-bold text-sm cursor-pointer rounded-md ">
+            <li className="hidden md:block px-4 py-3 text-violet-700  font-bold text-lg cursor-pointer rounded-md ">
            
                 {Auth  ? <div>
                   <div className="  relative text-violet-800  dark:text-slate-200 font-bold text-sm cursor-pointer rounded-md ">
